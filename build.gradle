@@ -23,3 +23,14 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    rootPackageName = "com.example.demosbymodule"
+    variantRelease = false
+    android = [
+            compileSdkVersion : 30,
+            buildToolsVersion : "30.0.3",
+            minSdkVersion     : 21,
+            targetSdkVersion  : 30
+    ]
+}
