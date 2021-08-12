@@ -7,6 +7,9 @@
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
     <uses-permission android:name="android.permission.BODY_SENSORS" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- 小米专属步数权限-->
+    <uses-permission android:name="miui.permission.WRITE_STEPS" />
+    <uses-permission android:name="miui.permission.READ_STEPS" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +18,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DemosByModule">
+        <activity android:name=".XiaomiCounterActivity">
+            <!-- 获取小米健康步数-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <service
             android:name=".StepService"
             android:enabled="true"
@@ -32,11 +44,12 @@
         </service>
 
         <activity android:name=".CounterActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!-- 注解此处，前台服务Activity-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
     </application>
 
