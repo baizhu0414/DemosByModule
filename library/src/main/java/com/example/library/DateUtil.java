@@ -8,6 +8,8 @@ import java.util.Locale;
 
 public class DateUtil {
 
+    private static final String TAG = "DateUtil";
+
     static final String[] rWeekStrings = {"周日", "周一", "周二", "周三", "周四", "周五", "周六"};
     static final String FORMAT_ONE = "yyyy-MM-dd HH:mm:ss";
     static final String FORMAT_TWO = "yyyy-MM-dd";
@@ -79,6 +81,24 @@ public class DateUtil {
     public static String getCurrentDateFormatThree() {
         SimpleDateFormat formatter = new SimpleDateFormat(FORMAT_THREE, Locale.getDefault());
         return formatter.format(System.currentTimeMillis());
+    }
+
+    /**
+     * 小米跑步数据库字段获取(开始结束时间)
+     * @param flag
+     * @return
+     */
+    public static long parseXiaomiTodayTime(boolean flag) {
+        SimpleDateFormat formatter = new SimpleDateFormat(FORMAT_ONE, Locale.getDefault());
+        long timeLong = 0L;
+        try {
+            // 获取一天开始或结束时间的时间戳"%s %s"空格不能丢，否则不符合FORMAT_ONE格式
+            timeLong = formatter.parse(String.format("%s %s",
+                    getCurrentDateFormatTwo(), flag ? "00:00:00" : "23:59:59")).getTime();
+        } catch (ParseException e) {
+            LogUtil.e(TAG, e.getMessage());
+        }
+        return timeLong;
     }
 
     /**
