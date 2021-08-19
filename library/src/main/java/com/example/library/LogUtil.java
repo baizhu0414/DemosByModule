@@ -8,4 +8,11 @@ public class LogUtil {
         Log.e(TAG, msg);
     }
 
+    public static void w(String TAG, String msg) {
+        Log.w(TAG, msg);
+    }
+
+    public static void d(String TAG, String msg) {
+        Log.d(TAG, msg);
+    }
 }

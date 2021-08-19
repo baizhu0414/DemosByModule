@@ -2,3 +2,4 @@ rootProject.name = "DemosByModule"
 include ':app'
 include ':library'
 include ':modulestepcounter'
+include ':modulekeepalive'
