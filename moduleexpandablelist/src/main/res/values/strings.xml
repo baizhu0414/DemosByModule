@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">moduleexpandablelist</string>
+    <string name="top_hint_text">%d个置顶聊天</string>
+</resources>

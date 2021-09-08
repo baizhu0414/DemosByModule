@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/lv_conv_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:id="@+id/ll_top_hint"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_arrow_height"
+                android:background="@color/background_chosen"
+                android:orientation="horizontal"
+                android:layout_below="@+id/lv_conv_list">
+
+                <ImageView
+                    android:layout_width="@dimen/list_arrow_height"
+                    android:layout_height="@dimen/list_arrow_height"
+                    android:padding="4dp"
+                    android:src="@drawable/list_top_icon" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="start|center"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/top_hint_text"
+                    android:textSize="@dimen/list_top_hint_text_size" />
+
+                <ImageView
+                    android:id="@+id/iv_top_hint_arrow"
+                    android:layout_width="@dimen/list_arrow_height"
+                    android:layout_height="@dimen/list_arrow_height"
+                    android:padding="4dp"
+                    android:src="@drawable/arrow_off_icon"/>
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lv_conv_list_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ll_top_hint"/>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
