@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 可能是最简单的收缩列表展示方式了。
+ * 可能是最简单的收缩列表展示方式了：控制getItemCount数量。
  */
 public class MainActivity extends AppCompatActivity {
 
