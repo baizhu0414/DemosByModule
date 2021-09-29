@@ -12,6 +12,7 @@ import com.example.library.LogUtil;
 import com.example.moduleexpandablelist.model.MyDiffCallback;
 import com.example.moduleexpandablelist.model.User;
 import com.example.moduleexpandablelist.model.UserListAdapter;
+import com.example.moduleexpandablelist.model.UserListAsyncAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,9 +27,11 @@ public class MainActivity3 extends AppCompatActivity {
     boolean clicked = false;
     List<User> mOldList;
     List<User> mNewList;
-    UserListAdapter adapter;
     // DiffUtil使用
     DiffUtil.DiffResult diffResult;
+//    UserListAdapter adapter;
+    // AsyncDiffUtil使用
+    UserListAsyncAdapter adapter2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +50,12 @@ public class MainActivity3 extends AppCompatActivity {
             mIdMax++;
             mOldList.add(new User(i, i + 20, "USER-" + i));
         }
-        adapter = new UserListAdapter(mOldList);
+//        adapter = new UserListAdapter(mOldList);
+        adapter2 = new UserListAsyncAdapter();
+        adapter2.setListUser(mOldList);
         mRv.setLayoutManager(new LinearLayoutManager(this));
-        mRv.setAdapter(adapter);
+//        mRv.setAdapter(adapter);
+        mRv.setAdapter(adapter2);
 
     }
 
@@ -76,7 +82,8 @@ public class MainActivity3 extends AppCompatActivity {
         // 设置数据更新
         diffResult = DiffUtil.calculateDiff(new MyDiffCallback(mOldList, mNewList));
         mOldList = mNewList;
-        adapter.setListUser(mNewList);
-        diffResult.dispatchUpdatesTo(adapter);
+//        adapter.setListUser(mNewList);
+//        diffResult.dispatchUpdatesTo(adapter);
+        adapter2.setListUser(mNewList);
     }
 }

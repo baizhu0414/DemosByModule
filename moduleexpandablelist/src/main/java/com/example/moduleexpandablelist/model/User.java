@@ -2,7 +2,7 @@ package com.example.moduleexpandablelist.model;
 
 import androidx.annotation.NonNull;
 
-public class User {
+public class User implements Cloneable{
     private int id;
     private int age;
     private String name;
@@ -48,8 +48,13 @@ public class User {
 
     @NonNull
     @Override
-    public User clone() throws CloneNotSupportedException {
-        super.clone();
-        return new User(id, age, name);
+    public User clone() {
+        User o = null;
+        try {
+            o = (User) super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return o;
     }
 }
