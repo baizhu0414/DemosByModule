@@ -11,8 +11,7 @@ import android.view.View;
 import com.example.library.LogUtil;
 import com.example.moduleexpandablelist.model.MyDiffCallback;
 import com.example.moduleexpandablelist.model.User;
-import com.example.moduleexpandablelist.model.UserListAdapter;
-import com.example.moduleexpandablelist.model.UserListAsyncAdapter;
+import com.example.moduleexpandablelist.model.UserReListAsyncAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +30,7 @@ public class MainActivity3 extends AppCompatActivity {
     DiffUtil.DiffResult diffResult;
 //    UserListAdapter adapter;
     // AsyncDiffUtil使用
-    UserListAsyncAdapter adapter2;
+    UserReListAsyncAdapter adapter2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +50,7 @@ public class MainActivity3 extends AppCompatActivity {
             mOldList.add(new User(i, i + 20, "USER-" + i));
         }
 //        adapter = new UserListAdapter(mOldList);
-        adapter2 = new UserListAsyncAdapter();
+        adapter2 = new UserReListAsyncAdapter();
         adapter2.setListUser(mOldList);
         mRv.setLayoutManager(new LinearLayoutManager(this));
 //        mRv.setAdapter(adapter);

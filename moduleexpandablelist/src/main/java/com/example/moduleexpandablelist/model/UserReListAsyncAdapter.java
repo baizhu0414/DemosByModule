@@ -15,12 +15,12 @@ import com.example.moduleexpandablelist.R;
 
 import java.util.List;
 
-public class UserListAsyncAdapter extends RecyclerView.Adapter<UserListAsyncAdapter.UserViewHolder> {
+public class UserReListAsyncAdapter extends RecyclerView.Adapter<UserReListAsyncAdapter.UserViewHolder> {
 
         /**代理所有对于数据的操作*/
         AsyncListDiffer<User> differ;
 
-        public UserListAsyncAdapter() {
+        public UserReListAsyncAdapter() {
             differ = new AsyncListDiffer<User>(this, new MyAsyncDiffCallback());
         }
 
@@ -31,21 +31,21 @@ public class UserListAsyncAdapter extends RecyclerView.Adapter<UserListAsyncAdap
 
         @NonNull
         @Override
-        public UserListAsyncAdapter.UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        public UserReListAsyncAdapter.UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View mItemView = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.rv_user_item, parent, false);
-            return new UserListAsyncAdapter.UserViewHolder(mItemView);
+            return new UserReListAsyncAdapter.UserViewHolder(mItemView);
         }
 
         @Override
-        public void onBindViewHolder(@NonNull UserListAsyncAdapter.UserViewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull UserReListAsyncAdapter.UserViewHolder holder, int position) {
             holder.tvId.setText("msg:" + differ.getCurrentList().get(position).getId());
             holder.tvAge.setText("" + differ.getCurrentList().get(position).getAge());
             holder.tvName.setText("" + differ.getCurrentList().get(position).getName());
         }
 
         @Override
-        public void onBindViewHolder(@NonNull UserListAsyncAdapter.UserViewHolder holder, int position, @NonNull List<Object> payloads) {
+        public void onBindViewHolder(@NonNull UserReListAsyncAdapter.UserViewHolder holder, int position, @NonNull List<Object> payloads) {
             if (payloads.isEmpty()) {
                 super.onBindViewHolder(holder, position, payloads);
             } else {
