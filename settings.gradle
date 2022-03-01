@@ -1,3 +1,4 @@
+include ':smallfeatureuse'
 include ':testalgorithm'
 rootProject.name = "DemosByModule"
 include ':app'
