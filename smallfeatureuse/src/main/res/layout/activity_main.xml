@@ -6,20 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-    <ViewPager
-        android:id="@+id/view_pager"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_movable"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        />
-    <TabLayout
-        android:id="@+id/tab_layout"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_marginBottom="@dimen/dp_1"
-        android:background="@color/white"
-        app:tabTextAppearance="@style/TabLayout_Style"
-        app:tabIndicatorHeight="0dp"
-        >
-    </TabLayout>
+        android:layout_height="match_parent"/>
 </LinearLayout>
