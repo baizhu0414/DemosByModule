@@ -9,13 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DemosByModule">
-        <activity android:name=".MainActivity">
+        <activity android:name=".DragListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CameraActivity"></activity>
+        <activity android:name=".WebSocketActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".CircleProgressViewActivity"></activity>
     </application>
 
 </manifest>

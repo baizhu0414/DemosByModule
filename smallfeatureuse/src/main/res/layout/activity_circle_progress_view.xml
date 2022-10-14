@@ -1,0 +1,16 @@
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/back_grey"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.example.smallfeatureuse.ui.CircleProgress
+        android:id="@+id/circle_progress"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:maxProgress="60"
+        app:startProgress="10"
+        app:startText="123456"
+        app:arcWidthProportion="0.05"
+        app:chosenColor="@color/circle_grey"
+        app:unChosenColor="@color/circle_blue"/>
+</LinearLayout>

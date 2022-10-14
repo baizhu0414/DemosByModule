@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleProgress">
+        <attr name="maxProgress" format="float" />
+        <attr name="startProgress" format="float" />
+        <attr name="startText" format="string" />
+        <attr name="arcWidthProportion" format="float" />
+        <attr name="chosenColor" format="color" />
+        <attr name="unChosenColor" format="color" />
+    </declare-styleable>
+</resources>
